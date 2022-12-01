@@ -1,0 +1,78 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+article {
+    max-width: 33.333%;
+    position: relative;
+    line-height: 0;
+    overflow: hidden;
+}
+article p, article h2 {
+    line-height: 1.4;
+}
+article h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+}
+article p {
+    margin-bottom: 0;
+    max-width: 85%;
+    text-align: center;
+}
+article img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 250ms ease-in-out;
+}
+.info {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: transparent;
+    transition: background-color 250ms ease-in-out;
+}
+.info h2, .info p {
+    visibility: hidden;
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out, visibility 250ms ease-in-out;
+    opacity: 0;
+}
+.info h2 {
+    transform: translateY(-20px);
+    
+}
+.info p {
+    transform: translateY(20px);
+}
+article:hover {
+    cursor: pointer;
+}
+article:hover .info {
+    background-color: rgba(130, 108, 84, 0.6);
+    transition: background-color 250ms ease-in-out;
+}
+article:hover h2, article:hover p {
+    transform:translateY(0px);
+    visibility: visible;
+    transition: opacity 250ms ease-in-out, transform 250ms ease-in-out, visibility 250ms ease-in-out;
+    opacity: 1;
+}
+article:hover img {
+    transform: scale(110%);
+    transition: transform 250ms ease-in-out;
+
+}
